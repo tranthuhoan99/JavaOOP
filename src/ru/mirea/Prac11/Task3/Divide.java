@@ -1,4 +1,4 @@
-package ru.mirea.Prac11.Task3_4;
+package ru.mirea.Prac11.Task3;
 
 public class Divide extends Operation {
     public Divide(Input first, Input second) {

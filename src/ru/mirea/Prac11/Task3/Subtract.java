@@ -1,4 +1,4 @@
-package ru.mirea.Prac11.Task3_4;
+package ru.mirea.Prac11.Task3;
 
 public class Subtract extends Operation {
     public Subtract(Input first, Input second) {

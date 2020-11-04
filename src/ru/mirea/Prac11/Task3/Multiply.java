@@ -1,4 +1,4 @@
-package ru.mirea.Prac11.Task3_4;
+package ru.mirea.Prac11.Task3;
 
 public class Multiply extends Operation {
     public Multiply(Input first, Input second) {
