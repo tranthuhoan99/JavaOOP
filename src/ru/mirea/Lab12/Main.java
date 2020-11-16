@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -38,8 +39,6 @@ public class Main {
             default:
                 System.out.println("There isn't that exercise");
         }
-        System.out.println("Enter the number of exercise:");
-        switch (number){}
     }
 
     static void ex1(Scanner scanner) {
@@ -91,16 +90,11 @@ public class Main {
         System.out.println("Enter the string:");
         String string = scanner.nextLine();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        sdf.setLenient(false);
+        Pattern pattern = Pattern.compile("^(?=\\d{2}([/])\\d{2}\\1\\d{4}$)(?:0[1-9]|1\\d|[2][0-8]|29(?!.02.(?!(?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)\\d{2}(?:[02468][048]|[13579][26])))|30(?!.02)|31(?=.(?:0[13578]|10|12))).(?:0[1-9]|1[012]).\\d{4}$");
+        Matcher matcher = pattern.matcher(string);
 
-        try {
-            sdf.parse(string);
-            System.out.println("YES");
-            return;
-        } catch (Exception ignored) {}
+        System.out.println(matcher.find() ? "YES" : "NO");
 
-        System.out.println("NO");
     }
 
     static void ex34(Scanner scanner) {
@@ -117,7 +111,7 @@ public class Main {
         System.out.println("Enter the string:");
         String string = scanner.nextLine();
 
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z].*)(?=.*[a-z].*)(?=.*\\d.*)\\w{8,}$");
+        Pattern pattern = Pattern.compile("^(?=\\.{0,})(?=.*\\d+.*)(?=.*[A-Z]+.*)(?=.*[a-z]+.*).{8,}$");
         Matcher matcher = pattern.matcher(string);
 
         System.out.println(matcher.find() ? "YES" : "NO");
